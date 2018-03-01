@@ -54,6 +54,9 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
+# disabled scripts
+disabled.*.js
+
 # dotenv environment variables file
 .env
 
