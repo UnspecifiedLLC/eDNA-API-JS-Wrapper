@@ -166,7 +166,6 @@ describe('Test IDM KYC', () => {
         });
         return idm.postPurchase(values)
             .then( (res) => {
-                console.log(res);
                 expect(res).toBe("ACCEPT");
         });
     });
