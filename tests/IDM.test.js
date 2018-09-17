@@ -1,4 +1,4 @@
-const IDM = require('../services/IDM');
+const IDM = require('../lib/IDM');
 const assert = require('chai').assert;
 
 var idm = new IDM();
@@ -38,14 +38,14 @@ describe('Test IDM KYC', () => {
         return idm.postRequest('/im/account/consumer', values)
             .then( (res) => {
                 expect(res.status).toBe(200);
-                expect(res.data.tid).toBe(values.tid);
+                expect(res.data.tid).toBe(values.tid)
         });
     });
 
     it('should able to make stage one kyc call', () => {
         return idm.evaluateConsumer(values)
             .then( (res) => {
-                return expect(res).toBe("DENY");
+                return expect(res).toBe("ACCEPT");
         });
     });
 
@@ -78,7 +78,7 @@ describe('Test IDM KYC', () => {
         })
         return idm.evaluateConsumer(values)
             .then( (res) => {
-                expect(res).toBe("DENY");
+                expect(res).toBe("ACCEPT");
         });
     });
 
@@ -108,7 +108,7 @@ describe('Test IDM KYC', () => {
         });
         return idm.evaluateConsumer(values)
             .then( (res) => {
-                expect(res).toBe("DENY");
+                expect(res).toBe("ACCEPT");
         });
     });
 
@@ -134,7 +134,7 @@ describe('Test IDM KYC', () => {
 
         return idm.postRedemption(values)
             .then( (res) => {
-                expect(res).toBe("DENY");
+                expect(res).toBe("ACCEPT");
         });
     });
 
@@ -166,7 +166,8 @@ describe('Test IDM KYC', () => {
         });
         return idm.postPurchase(values)
             .then( (res) => {
-                expect(res).toBe("DENY");
+                console.log(res);
+                expect(res).toBe("ACCEPT");
         });
     });
 

@@ -1,11 +1,15 @@
 {
-  "name": "authenticator",
+  "name": "eDNA-API-JS-Wrapper",
   "version": "1.0.0",
-  "description": "Yellow Card Authenticator System",
+  "description": "This is a Javascript Library for easily talking to the Identity Mind Global eDNA API",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/uncle-scooter/eDNA-API-JS-Wrapper.git"
+  },
   "scripts": {
     "test": "jest /tests",
-    "watch" :"jest --watch tests/"
+    "watch": "jest --watch tests/"
   },
   "author": "Justin Poiroux",
   "license": "ISC",
@@ -14,7 +18,10 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
-    "dotenv": "^5.0.0"
+    "dotenv": "^5.0.0",
+    "jest": "^23.6.0"
   },
-  "jest": { "testEnvironment": "node" }
+  "jest": {
+    "testEnvironment": "node"
+  }
 }
